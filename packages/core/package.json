@@ -1,0 +1,17 @@
+{
+  "name": "nihongo-ai-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "effect": "2.0.0-next.29",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.3"
+  }
+}
