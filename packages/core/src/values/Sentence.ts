@@ -1,4 +1,4 @@
-import { Brand } from "effect"
+import { Schema, brand, string } from "@effect/schema/Schema"
 
-export type Sentence = string & Brand.Brand<"Sentence">
-export const Sentence = Brand.nominal<Sentence>()
+export const Sentence = string.pipe(brand("Sentence"))
+export type Sentence = Schema.To<typeof Sentence>

@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "effect": "2.0.0-next.29",
+    "@effect/schema": "^0.35.1",
+    "effect": "2.0.0-next.32",
     "typescript": "^5.2.2",
     "vitest": "^0.34.3"
   }

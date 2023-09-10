@@ -1,7 +1,7 @@
-import { Brand } from "effect"
+import { union, literal, Schema, brand } from "@effect/schema/Schema"
 
-export type Assessment = ("correct" | "incorrect") & Brand.Brand<"Assessment">
-export const Assessment = Brand.refined<Assessment>(
-  (a) => ["correct", "incorrect"].includes(a),
-  (a) => Brand.error(`Expected ${a} to be correct or incorrect`),
-)
+const Incorrect = literal("incorrect")
+const Correct = literal("correct")
+export const Assessment = union(Correct, Incorrect).pipe(brand("Assessment"))
+
+export type Assessment = Schema.To<typeof Assessment>
