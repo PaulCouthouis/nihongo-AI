@@ -1,7 +1,14 @@
-import { union, literal, Schema, brand } from "@effect/schema/Schema"
+import {
+  union,
+  literal,
+  Schema,
+  brand,
+  parseEither,
+} from "@effect/schema/Schema"
 
-const Incorrect = literal("incorrect")
-const Correct = literal("correct")
-export const Assessment = union(Correct, Incorrect).pipe(brand("Assessment"))
-
+export const Assessment = literal("correct", "incorrect").pipe(
+  brand("Assessment"),
+)
 export type Assessment = Schema.To<typeof Assessment>
+
+export const parseAssessment = parseEither(Assessment)

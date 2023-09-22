@@ -11,8 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "@effect/schema": "^0.35.1",
+    "@types/wanakana": "^4.0.3",
     "effect": "2.0.0-next.32",
     "typescript": "^5.2.2",
     "vitest": "^0.34.3"
+  },
+  "dependencies": {
+    "wanakana": "^5.1.0"
   }
 }

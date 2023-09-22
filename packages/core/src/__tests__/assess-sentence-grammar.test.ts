@@ -1,9 +1,10 @@
 import { beforeEach, describe, expect, it } from "vitest"
-import { Context, Effect, Layer, pipe } from "effect"
+import { Effect } from "effect"
 import { LanguageAssessor } from "../gateway/LanguageAssessor"
 import { assessSentenceGrammar } from "../usecase/assessSentenceGrammar"
 import { Sentence } from "../values/Sentence"
 import { Assessment } from "../values/Assessment"
+import { ParseError } from "@effect/schema/ParseResult"
 
 describe("Assess Sentence Grammar", () => {
   let fixture: Fixture
@@ -13,13 +14,13 @@ describe("Assess Sentence Grammar", () => {
   })
 
   it("notifies correct assessment", () => {
-    fixture.givenSentence("This is a grammatically correct sentence")
+    fixture.givenSentence("こんにちは、今日はいい天気ですね！")
     fixture.whenAssessSentenceGrammar()
     fixture.thenAssessmentIs("correct")
   })
 
   it("notifies incorrect assessment", () => {
-    fixture.givenSentence("This is a grammatically incorrect sentence")
+    fixture.givenSentence("こんにちはを食べる")
     fixture.whenAssessSentenceGrammar()
     fixture.thenAssessmentIs("incorrect")
   })
@@ -27,7 +28,7 @@ describe("Assess Sentence Grammar", () => {
 
 const buildFixture = () => {
   let sentence: Sentence
-  let program: Effect.Effect<LanguageAssessor, never, Assessment>
+  let program: Effect.Effect<LanguageAssessor, ParseError, Assessment>
 
   return {
     givenSentence: (input: string) => {
@@ -51,9 +52,7 @@ const buildFixture = () => {
 }
 type Fixture = ReturnType<typeof buildFixture>
 
-const AssessSentenceGrammarStub = (
-  sentence: Sentence,
-): Effect.Effect<never, never, Assessment> =>
-  sentence === "This is a grammatically correct sentence"
+const AssessSentenceGrammarStub = (sentence: Sentence) =>
+  sentence === "こんにちは、今日はいい天気ですね！"
     ? Effect.succeed(Assessment("correct"))
     : Effect.succeed(Assessment("incorrect"))

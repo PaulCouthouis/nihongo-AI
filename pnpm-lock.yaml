@@ -13,10 +13,17 @@ importers:
         version: 3.0.2
 
   packages/core:
+    dependencies:
+      wanakana:
+        specifier: ^5.1.0
+        version: 5.1.0
     devDependencies:
       '@effect/schema':
         specifier: ^0.35.1
         version: 0.35.1(@effect/data@0.18.5)(@effect/io@0.40.1)
+      '@types/wanakana':
+        specifier: ^4.0.3
+        version: 4.0.3
       effect:
         specifier: 2.0.0-next.32
         version: 2.0.0-next.32(@effect/data@0.18.5)(@effect/io@0.40.1)(@effect/match@0.35.2)(@effect/stm@0.24.0)(@effect/stream@0.36.0)
@@ -29,9 +36,12 @@ importers:
 
   packages/open-ai-connector:
     devDependencies:
+      '@effect/schema':
+        specifier: ^0.35.1
+        version: 0.35.1(@effect/data@0.18.5)(@effect/io@0.40.1)
       effect:
-        specifier: 2.0.0-next.29
-        version: 2.0.0-next.29(@effect/data@0.17.6)(@effect/io@0.38.2)(@effect/match@0.34.0)(@effect/stm@0.22.0)(@effect/stream@0.34.0)
+        specifier: 2.0.0-next.32
+        version: 2.0.0-next.32(@effect/data@0.18.5)(@effect/io@0.40.1)(@effect/match@0.35.2)(@effect/stm@0.24.0)(@effect/stream@0.36.0)
       nihongo-ai-core:
         specifier: workspace:*
         version: link:../core
@@ -47,20 +57,8 @@ importers:
 
 packages:
 
-  /@effect/data@0.17.6:
-    resolution: {integrity: sha512-/vwz7Jh05eS0qY8kczR/YyJd18d0C+PMtUkAealh4f6gwvhABLGCnktNJTcq/+UHxY0Cbv18r5uaJ4+7PPC+WQ==}
-    dev: true
-
   /@effect/data@0.18.5:
     resolution: {integrity: sha512-VFPJ0prGq3eF6/eZYKVI/1IC1purdGJXEHJC1ggKynPko03upjtmeCeCsEyMiY12DzVIAuME425JndiFb7m2xw==}
-    dev: true
-
-  /@effect/io@0.38.2(@effect/data@0.17.6):
-    resolution: {integrity: sha512-rnAXFo9BDLbY7DgQE1e8uP/sEniyVCsB7gNs+yXPu0XK9s4kaGinH6XgwYRDBuu7Fu1tQ1yd7JoAdEb7yutNRg==}
-    peerDependencies:
-      '@effect/data': ^0.17.1
-    dependencies:
-      '@effect/data': 0.17.6
     dev: true
 
   /@effect/io@0.40.1(@effect/data@0.18.5):
@@ -69,14 +67,6 @@ packages:
       '@effect/data': ^0.18.5
     dependencies:
       '@effect/data': 0.18.5
-    dev: true
-
-  /@effect/match@0.34.0(@effect/data@0.17.6):
-    resolution: {integrity: sha512-3fPqDT81rOU+83s84dx7Dh8pMtBq6BE+FGxq5U6FB48IeUdr35jayeuIXe6ZGQC6YorM3GJny6XYO5gOy0AAow==}
-    peerDependencies:
-      '@effect/data': ^0.17.1
-    dependencies:
-      '@effect/data': 0.17.6
     dev: true
 
   /@effect/match@0.35.2(@effect/data@0.18.5):
@@ -98,16 +88,6 @@ packages:
       fast-check: 3.13.0
     dev: true
 
-  /@effect/stm@0.22.0(@effect/data@0.17.6)(@effect/io@0.38.2):
-    resolution: {integrity: sha512-K+v05Iveg9h//xZbo/JekZE4mHln8QA7dpfl84L3VKQlUfiAZOiN4ABTyb41Ly+n+YywSSbeTdbOya0ccxx/rQ==}
-    peerDependencies:
-      '@effect/data': ^0.17.1
-      '@effect/io': ^0.38.0
-    dependencies:
-      '@effect/data': 0.17.6
-      '@effect/io': 0.38.2(@effect/data@0.17.6)
-    dev: true
-
   /@effect/stm@0.24.0(@effect/data@0.18.5)(@effect/io@0.40.1):
     resolution: {integrity: sha512-6L4zhy2lvkxn3jMG7dvZ4lKOmxSvaNBpkIT/ZOS6mad+B5/r8G3bKFe0C70aHwpQkxORd9LVmFr/f5MXLKZtfQ==}
     peerDependencies:
@@ -116,16 +96,6 @@ packages:
     dependencies:
       '@effect/data': 0.18.5
       '@effect/io': 0.40.1(@effect/data@0.18.5)
-    dev: true
-
-  /@effect/stream@0.34.0(@effect/data@0.17.6)(@effect/io@0.38.2):
-    resolution: {integrity: sha512-8eDDQ0JG+ctsstLH/Qo4ojBkcEIFtqpEsWZS6leAwY9gXVmEG54PMWXZiX6dTchgQXKmSnLkEh36leAq4piawQ==}
-    peerDependencies:
-      '@effect/data': ^0.17.1
-      '@effect/io': ^0.38.0
-    dependencies:
-      '@effect/data': 0.17.6
-      '@effect/io': 0.38.2(@effect/data@0.17.6)
     dev: true
 
   /@effect/stream@0.36.0(@effect/data@0.18.5)(@effect/io@0.40.1):
@@ -376,6 +346,10 @@ packages:
     resolution: {integrity: sha512-Gi5wRGPbbyOTX+4Y2iULQ27oUPrefaB0PxGQJnfyWN3kvEDGM3mIB5M/gQLmitZf7A9FmLeaqxD3L1CXpm3VKQ==}
     dev: true
 
+  /@types/wanakana@4.0.3:
+    resolution: {integrity: sha512-AibaWzahBKizxmsAy8rEWSIqqcT0v9KZTS8S6zPLmStGBFdccYfXydhgwYOV+6lGqQ890MpA4h2MPET3uPk9Zg==}
+    dev: true
+
   /@vitest/expect@0.34.3:
     resolution: {integrity: sha512-F8MTXZUYRBVsYL1uoIft1HHWhwDbSzwAU9Zgh8S6WFC3YgVb4AnFV2GXO3P5Em8FjEYaZtTnQYoNwwBrlOMXgg==}
     dependencies:
@@ -527,22 +501,6 @@ packages:
     dependencies:
       base-64: 0.1.0
       md5: 2.3.0
-    dev: true
-
-  /effect@2.0.0-next.29(@effect/data@0.17.6)(@effect/io@0.38.2)(@effect/match@0.34.0)(@effect/stm@0.22.0)(@effect/stream@0.34.0):
-    resolution: {integrity: sha512-CgQRDXcaGVBJUS7816vOwIP9CPRKXYBZMOP4ifJ4UdDLs1t/+EE4FSjiaHHjOCqIU7pRyCi2QZYuDjAT3OgFaw==}
-    peerDependencies:
-      '@effect/data': ^0.17.6
-      '@effect/io': ^0.38.2
-      '@effect/match': ^0.34.0
-      '@effect/stm': ^0.22.0
-      '@effect/stream': ^0.34.0
-    dependencies:
-      '@effect/data': 0.17.6
-      '@effect/io': 0.38.2(@effect/data@0.17.6)
-      '@effect/match': 0.34.0(@effect/data@0.17.6)
-      '@effect/stm': 0.22.0(@effect/data@0.17.6)(@effect/io@0.38.2)
-      '@effect/stream': 0.34.0(@effect/data@0.17.6)(@effect/io@0.38.2)
     dev: true
 
   /effect@2.0.0-next.32(@effect/data@0.18.5)(@effect/io@0.40.1)(@effect/match@0.35.2)(@effect/stm@0.24.0)(@effect/stream@0.36.0):
@@ -985,6 +943,11 @@ packages:
       - supports-color
       - terser
     dev: true
+
+  /wanakana@5.1.0:
+    resolution: {integrity: sha512-QJ5XNTqL5gM1JR2ikESMi+xKx16TIuZDynj6LagqK4YCWnRihtxprzCnVI1SappWI8RuiSAANGoePEV5pptiiQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /web-streams-polyfill@4.0.0-beta.3:
     resolution: {integrity: sha512-QW95TCTaHmsYfHDybGMwO5IJIM93I/6vTRk+daHTWFPhwh+C8Cg7j7XyKrwrj8Ib6vYXe0ocYNrmzY4xAAN6ug==}
