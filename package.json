@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "w:be": "pnpm --filter nihongo-ai-backend",
     "w:core": "pnpm --filter nihongo-ai-core",
     "w:oac": "pnpm --filter nihongo-ai-open-ai-connector"
   },
