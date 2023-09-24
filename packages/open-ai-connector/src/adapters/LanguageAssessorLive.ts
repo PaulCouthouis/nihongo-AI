@@ -1,6 +1,6 @@
 import { LanguageAssessor } from "nihongo-ai-core/src/gateway/LanguageAssessor"
 import { parseAssessment } from "nihongo-ai-core/src/values/Assessment"
-import { Sentence } from "nihongo-ai-core/src/values/Sentence"
+import { JapaneseSentence } from "nihongo-ai-core/src/values/Sentence"
 import { completeSentenceGrammarAssessment } from "../completions/assessSentenceGrammarCompletion"
 import { Effect, pipe } from "effect"
 

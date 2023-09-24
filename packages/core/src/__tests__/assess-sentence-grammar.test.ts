@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from "vitest"
 import { Effect } from "effect"
 import { LanguageAssessor } from "../gateway/LanguageAssessor"
 import { assessSentenceGrammar } from "../usecase/assessSentenceGrammar"
-import { Sentence } from "../values/Sentence"
+import { JapaneseSentence } from "../values/JapaneseSentence"
 import { Assessment } from "../values/Assessment"
 import { ParseError } from "@effect/schema/ParseResult"
 
@@ -32,7 +32,7 @@ const buildFixture = () => {
 
   return {
     givenSentence: (input: string) => {
-      sentence = Sentence(input)
+      sentence = JapaneseSentence(input)
     },
     whenAssessSentenceGrammar: () => {
       program = assessSentenceGrammar(sentence)

@@ -12,7 +12,7 @@ const Japanese = filter((s: string) => isJapanese(s), {
   message: () => "Must be japanese.",
 })
 
-export const Sentence = string.pipe(Japanese, brand("Sentence"))
-export type Sentence = Schema.To<typeof Sentence>
+export const JapaneseSentence = string.pipe(Japanese, brand("Sentence"))
+export type JapaneseSentencße = Schema.To<typeof JapaneseSentence>
 
-export const parseJapaneseSentence = parseEither(Sentence)
+export const parseJapaneseSentence = parseEither(JapaneseSentence)

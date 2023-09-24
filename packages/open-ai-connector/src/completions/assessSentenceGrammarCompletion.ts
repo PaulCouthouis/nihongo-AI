@@ -1,4 +1,4 @@
-import { Sentence } from "nihongo-ai-core/src/values/Sentence"
+import { JapaneseSentence } from "nihongo-ai-core/src/values/Sentence"
 import { openAi } from "../openAi"
 
 export const completeSentenceGrammarAssessment = (sentence: Sentence) => {

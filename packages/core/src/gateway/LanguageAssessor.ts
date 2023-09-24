@@ -1,5 +1,5 @@
 import { Context, Effect } from "effect"
-import { Sentence } from "../values/Sentence"
+import { JapaneseSentence } from "../values/JapaneseSentence"
 import { Assessment } from "../values/Assessment"
 import { ParseError } from "@effect/schema/ParseResult"
 

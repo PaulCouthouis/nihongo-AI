@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { parseJapaneseSentence } from "../Sentence"
+import { parseJapaneseSentence } from "../JapaneseSentence"
 import { Either } from "effect"
 
 describe("Sentence", () => {
